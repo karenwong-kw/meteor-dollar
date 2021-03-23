@@ -14,6 +14,7 @@ class StuffItem extends React.Component {
         <Table.Cell>
           <Link to={`/edit/${this.props.stuff._id}`}>Edit</Link>
         </Table.Cell>
+        <Table.Cell>{this.props.stuff.value}</Table.Cell>
       </Table.Row>
     );
   }
@@ -25,6 +26,7 @@ StuffItem.propTypes = {
     name: PropTypes.string,
     quantity: PropTypes.number,
     condition: PropTypes.string,
+    value: PropTypes.number,
     _id: PropTypes.string,
   }).isRequired,
 };

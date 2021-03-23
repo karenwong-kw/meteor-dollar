@@ -16,6 +16,7 @@ class StuffsCollection {
       name: String,
       quantity: Number,
       owner: String,
+      value: Number,
       condition: {
         type: String,
         allowedValues: ['excellent', 'good', 'fair', 'poor'],

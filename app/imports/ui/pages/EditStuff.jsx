@@ -15,8 +15,8 @@ class EditStuff extends React.Component {
 
   // On successful submit, insert the data.
   submit(data) {
-    const { name, quantity, condition, _id } = data;
-    Stuffs.collection.update(_id, { $set: { name, quantity, condition } }, (error) => (error ?
+    const { name, quantity, value, condition, _id } = data;
+    Stuffs.collection.update(_id, { $set: { name, quantity, condition, value } }, (error) => (error ?
       swal('Error', error.message, 'error') :
       swal('Success', 'Item updated successfully', 'success')));
   }
@@ -37,6 +37,7 @@ class EditStuff extends React.Component {
               <TextField name='name'/>
               <NumField name='quantity' decimal={false}/>
               <SelectField name='condition'/>
+              <NumField name='value' decimal={false}/>
               <SubmitField value='Submit'/>
               <ErrorsField/>
               <HiddenField name='owner' />
